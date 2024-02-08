@@ -101,7 +101,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     // provider ke under hmne jo v pass kiya hm ouse kahi v use kr skte hain
-    <AuthContext.Provider value={{ Isloggedin, storeTokenInLS, LogoutUser, user, services, authtoken, isloading }}>
+    <AuthContext.Provider value={{ Isloggedin, storeTokenInLS, LogoutUser, user, userAuthentication, services, authtoken, isloading }}>
       {children}
     </AuthContext.Provider>
   )

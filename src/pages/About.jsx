@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import Analytics from "../components/Analytics";
 import { useAuth } from "../store/auth";
@@ -16,7 +16,7 @@ const About = () => {
   const [userdata, setuserdata] = useState(true);
   // console.log("userdata: ", userdata);
 
-  const { user } = useAuth();
+  const { user, userAuthentication } = useAuth();
   // console.log("user : ", user);  - it prints all userdata like name, email, phone, isAdmin- comes from token
 
 
@@ -30,6 +30,11 @@ const About = () => {
 
     setuserdata(false)
   }
+
+
+  useEffect(() => {
+    userAuthentication()
+  }, [])
 
 
   return (
