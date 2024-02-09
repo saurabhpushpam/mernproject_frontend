@@ -6,7 +6,7 @@ import { useAuth } from '../store/auth'
 
 const Navbar = () => {
 
-  const { Isloggedin } = useAuth();
+  const { Isloggedin, user } = useAuth();
   console.log(Isloggedin);
 
   ///////////////////////
@@ -46,6 +46,11 @@ const Navbar = () => {
               <li><NavLink to='/about'>About</NavLink></li>
               <li><NavLink to='/contact'>Contact</NavLink></li>
               <li><NavLink to='/service'>Service</NavLink></li>
+
+              {
+                Isloggedin && user.userData.isAdmin && (
+                  <li><NavLink to='/admin'>Admin</NavLink></li>
+                )}
 
               {
 
